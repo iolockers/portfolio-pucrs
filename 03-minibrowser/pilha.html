@@ -1,0 +1,39 @@
+<script>
+    console.log('Pilha/Stack')
+
+    class BrowserHistoryStack {
+        constructor() {
+            this.cursor = 0;
+            this.pilha = [];
+        }
+
+        print() {
+            console.log('Cursor', this.cursor);
+            console.log('Páginas', this.pilha);
+        }
+
+        push(item) {
+            this.cursor = this.cursor + 1;
+            this.pilha.push(item);
+        }
+
+        back() {
+            this.cursor = this.cursor - 1;
+            // this.pilha.pop();
+        }
+
+        clear() {
+            this.data = [];
+        }
+
+    }
+
+    const history = new BrowserHistoryStack();
+    history.push('https://google.com');
+    history.push('https://youtube.com');
+    history.push('https://facebook.com');
+    history.print();
+    history.back();
+    history.print();
+
+</script>
